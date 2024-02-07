@@ -131,7 +131,7 @@ def insert_to_pg():
     for url, row in zip(urls, data):
         q = '''
         INSERT INTO events (url, title, date, venue, category, location, latitude, longitude, weather_condition, temperature)
-        VALUES (%s, %s, %s, %s, %s, %s)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         ON CONFLICT (url) DO NOTHING;
         '''
         cur.execute(q, (url, row['title'], row['date'], row['venue'], row['category'], row['location'], row['geolocation'][0], row['geolocation'][1], row['weather_condition'], row['temperature']))
