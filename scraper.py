@@ -121,8 +121,8 @@ def insert_to_pg():
         venue TEXT,
         category TEXT,
         location TEXT
-        latitude FLOAT,
-        longitude FLOAT,
+        latitude TEXT,
+        longitude TEXT,
         weather_condition TEXT,
         temperature FLOAT
     );
@@ -144,4 +144,4 @@ def insert_to_pg():
 if __name__ == '__main__':
     list_links()
     get_detail_page()
-    insert_to_pg()
+    # insert_to_pg()
