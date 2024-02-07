@@ -80,7 +80,8 @@ def get_geolocation(venue, location):
             res_dict = res_cord.json()
             return (res_dict[0]['lat'], res_dict[0]['lon'])
         except:
-            return None
+            # if still not found, return None
+            return (None, None)
 
 
 def get_weather(geolocation, date):
