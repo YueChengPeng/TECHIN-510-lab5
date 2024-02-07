@@ -86,8 +86,7 @@ def get_geolocation(venue, location):
 def get_weather(geolocation, date):
     if geolocation is None:
         return None, None
-    print(geolocation, date)
-    # return None, None
+
     weather_base_url = "https://api.weather.gov/points/"
     try:
         # get the weather data of the location
@@ -131,11 +130,11 @@ def insert_to_pg():
     data = json.load(open(URL_DETAIL_FILE, 'r'))
     for url, row in zip(urls, data):
         q = '''
-        INSERT INTO events (url, title, date, venue, category, location, geolocation, weather_condition, temperature)
+        INSERT INTO events (url, title, date, venue, category, location, latitude, longitude, weather_condition, temperature)
         VALUES (%s, %s, %s, %s, %s, %s)
         ON CONFLICT (url) DO NOTHING;
         '''
-        cur.execute(q, (url, row['title'], row['date'], row['venue'], row['category'], row['location'], row['geolocation'], row['weather_condition'], row['temperature']))
+        cur.execute(q, (url, row['title'], row['date'], row['venue'], row['category'], row['location'], row['geolocation'][0], row['geolocation'][1], row['weather_condition'], row['temperature']))
 
 if __name__ == '__main__':
     list_links()
