@@ -114,7 +114,7 @@ def get_weather(geolocation, date):
 
 def insert_to_pg():
     q = '''
-    CREATE TABLE IF NOT EXISTS events (
+    CREATE TABLE IF NOT EXISTS event (
         url TEXT PRIMARY KEY,
         title TEXT,
         date TIMESTAMP WITH TIME ZONE,
