@@ -9,6 +9,8 @@ import numpy as np
 from db import conn_str
 
 st.title("Seattle Events")
+st.write(conn_str)
+
 df = sqlio.read_sql_query("SELECT * FROM events", conn_str)
 
 # what are the most common categories of events?

@@ -12,6 +12,7 @@ db_host = os.getenv('DB_HOST')
 db_port = os.getenv('DB_PORT')
 db_name = os.getenv('DB_NAME')
 
+print(db_user, db_pw, db_host, db_port, db_name)
 
 conn_str = f'postgresql://{db_user}:{db_pw}@{db_host}:{db_port}/{db_name}'
 
