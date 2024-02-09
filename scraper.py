@@ -120,11 +120,11 @@ def insert_to_pg():
         date TIMESTAMP WITH TIME ZONE,
         venue TEXT,
         category TEXT,
-        location TEXT
+        location TEXT,
         latitude TEXT,
         longitude TEXT,
         weather_condition TEXT,
-        temperature FLOAT
+        temperature TEXT
     );
     '''
     conn = get_db_conn()
@@ -144,4 +144,4 @@ def insert_to_pg():
 if __name__ == '__main__':
     list_links()
     get_detail_page()
-    # insert_to_pg()
+    insert_to_pg()
