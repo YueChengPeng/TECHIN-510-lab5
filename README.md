@@ -11,6 +11,7 @@ pip install -r requirements.txt
 
 ## What's Included
 - app.py: The streamlit app on Seattle events, has following features.
+    - Deployed on https://techin510lab5leo.azurewebsites.net/.
     - Read data from the PostgreSQL database (which is updated everyday).
     - Several visualizations:
         - What category of events are most common in Seattle?
